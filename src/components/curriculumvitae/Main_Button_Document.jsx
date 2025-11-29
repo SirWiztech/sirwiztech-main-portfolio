@@ -1,7 +1,7 @@
 import React from 'react'
 import DownloadcvButton from './DownloadcvButton'
 
-const Main_Button_Document = () => {
+const MainButtonDocument = () => {
   return (
     <div>
         <DownloadcvButton/>
@@ -9,4 +9,4 @@ const Main_Button_Document = () => {
   )
 }
 
-export default Main_Button_Document
+export default MainButtonDocument

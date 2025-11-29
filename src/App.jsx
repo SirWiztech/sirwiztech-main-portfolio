@@ -9,7 +9,7 @@ import ProjectsMain from "./components/projectsSection/ProjectsMain";
 import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
 import SubHeroMain from "./components/subHeroSection/SubHeroMain";
-import Main_Button_Document from "./components/curriculumvitae/main_button_document";
+import MainButtonDocument from './components/curriculumvitae/main_button_document';
 
 import OtherSkillsMain from "./components/otherskills/otherskillsmain"
 
@@ -27,7 +27,7 @@ function App() {
       <OtherSkillsMain />
       <ExperienceMain />
       <ProjectsMain />
-      <Main_Button_Document />
+      <MainButtonDocument />
       <ContactMeMain />
       <FooterMain />
     </main>
