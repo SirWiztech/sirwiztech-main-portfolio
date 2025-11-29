@@ -9,7 +9,10 @@ import ProjectsMain from "./components/projectsSection/ProjectsMain";
 import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
 import SubHeroMain from "./components/subHeroSection/SubHeroMain";
+<<<<<<< HEAD
 import OtherSkillsMain from "./components/otherskills/otherskillsmain"
+=======
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
 
 function App() {
   return (
@@ -21,7 +24,10 @@ function App() {
       <AboutMeMain />
       <SkillsMain />
       <SubSkills />
+<<<<<<< HEAD
       <OtherSkillsMain/>
+=======
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
       <ExperienceMain />
       <ProjectsMain />
       <ContactMeMain />

@@ -5,6 +5,7 @@ import { fadeIn } from "../../framerMotion/variants";
 
 const projects = [
   {
+<<<<<<< HEAD
     name: "Scorezone Webapp",
     year: "Nov2025",
     align: "left",
@@ -35,41 +36,66 @@ const projects = [
   {
     name: "Bank App",
     year: "Mar 2025",
+=======
+    name: "Bank App",
+    year: "Jan2024",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     align: "left",
     image: "/images/BANK.png", // <-- Add leading slash
     link: "https://nova.karamelscript.com.ng/",
   },
   {
     name: "Quizify App",
+<<<<<<< HEAD
     year: "Jan2025",
+=======
+    year: "Mar2025",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     align: "right",
     image: "/images/quizify.png", // <-- Add leading slash
     link: "https://quizzify2025.netlify.app/",
   },
   {
+<<<<<<< HEAD
     name: "Gift Card App",
     year: "May2024",
+=======
+    name: "GIFT CARD App",
+    year: "Sept2024",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     align: "left",
     image: "/images/giftcard.png", // <-- Add leading slash
     link: "https://webtechs.com.ng/bitbounty/",
   },
   {
     name: "Ethereal landing Page",
+<<<<<<< HEAD
     year: "Jan2024",
+=======
+    year: "May2025",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     align: "right",
     image: "/images/ethereal.png", // <-- Add leading slash
     link: "https://ethereal-book-slot.netlify.app/",
   },
   {
     name: "Investment App",
+<<<<<<< HEAD
     year: "March2023",
+=======
+    year: "March2025",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     align: "left",
     image: "/images/investment.png", // <-- Add leading slash
     link: "https://rankhyip.webblog.top/",
   },
   {
     name: "Web3 App",
+<<<<<<< HEAD
     year: "Aug2023",
+=======
+    year: "Aug2025",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     align: "right",
     image: "/images/web3.png", // <-- Add leading slash
     link: "https://bitweb.karamelscript.com.ng/",

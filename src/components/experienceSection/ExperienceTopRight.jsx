@@ -4,9 +4,13 @@ const ExperienceTopRight = () => {
       <p className="text-lg text-center text-lightGrey">
         I specialize in{" "}
         <span className="font-bold text-white">
+<<<<<<< HEAD
           React, next.js, nest.js, nuxt.js, php, dart and modern JavaScript(node.js), i also specialize
           in content management systems like wordpress, wix, webflow, and
           frameworks like angular, vue.js, bootstrap, tailwindcss
+=======
+          React, php, dart and modern JavaScript(node.js)
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
         </span>
         , leveraging best practices to create scalable and maintainable
         solutions. <br />

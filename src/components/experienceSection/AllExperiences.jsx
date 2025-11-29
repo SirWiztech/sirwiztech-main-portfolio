@@ -6,7 +6,11 @@ import { fadeIn } from "../../framerMotion/variants";
 const experiences = [
   {
     job: "Full-stack Developer",
+<<<<<<< HEAD
     company: "Circle of Developers",
+=======
+    company: "Alex Apps",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     date: "2022 - Present",
     responsibilities: [
       "Implementing reusable components.",
@@ -17,7 +21,11 @@ const experiences = [
   },
   {
     job: "Course Instructor",
+<<<<<<< HEAD
     company: "CDEV ACADEMY",
+=======
+    company: "Nucamp",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     date: "2023 - Present",
     responsibilities: [
       "Explaining and facilitating web development concepts.",
@@ -27,7 +35,11 @@ const experiences = [
   },
   {
     job: "Course Instructor",
+<<<<<<< HEAD
     company: "StackLearners Academy",
+=======
+    company: "Sprints",
+>>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
     date: "2024 - Present",
     responsibilities: [
       "Teaching JavaScript, React and TailwindCSS.",
