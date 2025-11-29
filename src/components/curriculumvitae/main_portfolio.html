@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ogaraku Ugochukwu - Full Stack Web Developer CV</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Custom color for the "electrifying orangered"
+                        'electrifying-orangered': '#FF4500', // Using a vibrant, standard orangered
+                        'primary-dark': '#1e293b', // slate-800 equivalent for text/background
+                        'skill-empty': '#ffdbc9', // Lighter orange for empty skill dots
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Base styles */
+        body {
+            background-color: #f8fafc; /* Slate-50 background */
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF4500;
+            border-radius: 10px;
+        }
+        /* Style for all SVGs/Icons in the sidebar */
+        .icon-color {
+            color: #FF4500; /* Set the icon color to the primary accent color */
+        }
+
+        /* Button specific styles for a professional look */
+        .download-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(255, 69, 0, 0.2);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 10px rgba(255, 69, 0, 0.3);
+        }
+        .download-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(255, 69, 0, 0.1);
+        }
+        
+        /* Print Styles - Crucial for PDF download appearance */
+        @media print {
+            /* *** FIX: FORCE COLORS AND BACKGROUNDS TO PRINT *** */
+            /* This is the key addition to include backgrounds and colors */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* Hide elements that shouldn't be in the PDF (buttons, background, shadows) */
+            .no-print {
+                display: none !important;
+            }
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                background-color: white !important;
+            }
+            .cv-page {
+                box-shadow: none !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                width: 100% !important;
+                max-width: none !important;
+            }
+            /* Ensure the layout is block/simple for printing */
+            .grid {
+                display: block !important;
+            }
+            /* Force sidebar background color to print (it uses bg-gray-50/50) */
+            aside {
+                background-color: #f9fafb !important; /* A light, printable gray */
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="cv-page max-w-6xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden print:shadow-none print:rounded-none">
+
+        <header class="p-6 md:p-10 bg-electrifying-orangered text-white shadow-xl flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <div>
+                <h1 class="text-4xl md:text-6xl font-black tracking-tighter">
+                    OGARAKU UGOCHUKWU
+                </h1>
+                <p class="text-xl md:text-3xl font-light mt-1">
+                    FULL STACK WEB DEVELOPER
+                </p>
+            </div>
+            <div class="mt-4 sm:mt-0 w-32 h-32 md:w-40 md:h-40 bg-gray-200 rounded-full border-4 border-white shadow-2xl flex items-center justify-center flex-shrink-0">
+                <img src="/images/cv_image.png" alt="Ogaraku Ugochukwu Profile Picture" class="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover">
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+
+            <section class="lg:col-span-1 p-6 md:p-8 bg-gray-50/50 space-y-8">
+
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold uppercase tracking-widest text-electrifying-orangered pb-1 border-b-2 border-electrifying-orangered">
+                        Contact
+                    </h2>
+                    <p class="text-sm">15 Ebonesi street fegge Onitsha, 431102, Nigeria</p>
+                    <div class="flex items-center text-sm group cursor-pointer" onclick="copyToClipboard('ojimabojames@gmail.com')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-500 group-hover:text-electrifying-orangered transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <span id="email-text">ogarakuugochukwu9@gmail.com</span>
+                        <span class="ml-2 text-xs text-electrifying-orangered opacity-0 group-hover:opacity-100 transition-opacity">(Copy)</span>
+                    </div>
+                    <div class="flex items-center text-sm group cursor-pointer" onclick="copyToClipboard('+2348108787625')">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-gray-500 group-hover:text-electrifying-orangered transition-colors" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74A1 1 0 0118 16.847V17a1 1 0 01-1 1h-2C7.94 18 2 12.06 2 5V3z" />
+                        </svg>
+                        <span id="phone-text">+2348108787625</span>
+                        <span class="ml-2 text-xs text-electrifying-orangered opacity-0 group-hover:opacity-100 transition-opacity">(Copy)</span>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h2 class="text-lg font-bold uppercase tracking-widest text-electrifying-orangered pb-1 border-b-2 border-electrifying-orangered">
+                        Web & Social Links
+                    </h2>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="https://portfolio-aseb.vercel.app/" target="_blank" class="text-sm text-gray-700 hover:text-electrifying-orangered transition-colors flex items-center justify-between">
+                                <span class="flex items-center font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 icon-color flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                                    Portfolio
+                                </span>
+                                <span class="text-xs font-light text-gray-500">
+                                    portfolio-aseb.vercel.app
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://circleofdevelopers.great-site.net/" target="_blank" class="text-sm text-gray-700 hover:text-electrifying-orangered transition-colors flex items-center justify-between">
+                                <span class="flex items-center font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 icon-color flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                    Agency Website
+                                </span>
+                                <span class="text-xs font-light text-gray-500">
+                                    circleofdevelopers.net
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/SirWiztech" target="_blank" class="text-sm text-gray-700 hover:text-electrifying-orangered transition-colors flex items-center justify-between">
+                                <span class="flex items-center font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 icon-color flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-2-1c4 0 5-2 5-5.5.08-1.25-.2-2.38-.8-3.32.73-1.4.63-2.67.63-3.79s-.3-2.43 1-3.6-2-2.12-3.8-1.57c.56-1.12.82-2.5 1-4-.04-.52-1.35-.48-1.52-.45-.48.15-1.14.35-1.67.75C12 5 10 6 10 6s-.5-1.5-2.5-1.5c-2.3 0-3.5 1.5-3.5 3.5-.06 1.45 0 2.87 0 4.33C4.8 15.6 5 17 9 17c-1 0-2 1-2 1v4c-2.5.5-5 1.5-5 4C2 21 4 23 8 23h8c4 0 6-2 6-4 0-2.5-1.5-4-4-4z"/></svg>
+                                    GitHub
+                                </span>
+                                <span class="text-xs font-light text-gray-500">
+                                    github.com/SirWiztech
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/ogaraku-ugochukwu-4b2a18373" target="_blank" class="text-sm text-gray-700 hover:text-electrifying-orangered transition-colors flex items-center justify-between">
+                                <span class="flex items-center font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 icon-color flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                    LinkedIn
+                                </span>
+                                <span class="text-xs font-light text-gray-500">
+                                    linkedin.com/in/ogaraku-ugochukwu
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://x.com/Sir_wiztech" target="_blank" class="text-sm text-gray-700 hover:text-electrifying-orangered transition-colors flex items-center justify-between">
+                                <span class="flex items-center font-medium">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 icon-color flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18.4 11.6 2.4-1.6 4.6-3.7 6.3-6-4.4-1.2-7-6.5-4.4-10.7C3.3 5.4 6 7 7.7 7.5c-2-2-5-1.5-6.8-2.6 1.3 2.1 4.5 3.5 6.5 3.8-2.4 2.8-2.4 7.6-1 10.5 4.8 0 8.7-2.5 11.3-5.2s4-5.3 4-8.7c0-.2 0-.4 0-.6z"/></svg>
+                                    X / Twitter
+                                </span>
+                                <span class="text-xs font-light text-gray-500">
+                                    x.com/Sir_wiztech
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-lg font-bold uppercase tracking-widest text-electrifying-orangered pb-1 border-b-2 border-electrifying-orangered">
+                        Technical Skills & Proficiency
+                    </h2>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">HTML, CSS, JAVASCRIPT</span>
+                            <div class="flex space-x-0.5" title="Expert">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">REACT JS</span>
+                            <div class="flex space-x-0.5" title="Advanced">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">NODE JS</span>
+                            <div class="flex space-x-0.5" title="Advanced">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">PHP</span>
+                            <div class="flex space-x-0.5" title="Competent">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">PYTHON</span>
+                            <div class="flex space-x-0.5" title="Competent">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">ANGULAR</span>
+                            <div class="flex space-x-0.5" title="Familiar">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">VUE JS</span>
+                            <div class="flex space-x-0.5" title="Familiar">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">WORD PRESS</span>
+                            <div class="flex space-x-0.5" title="Advanced">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">WEB FLOW & FRAMER</span>
+                            <div class="flex space-x-0.5" title="Competent">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-800">FIGMA, ADOBE XD</span>
+                            <div class="flex space-x-0.5" title="Advanced">
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-electrifying-orangered shadow-md shadow-electrifying-orangered/50"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-skill-empty"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <h2 class="text-lg font-bold uppercase tracking-widest text-electrifying-orangered pb-1 border-b-2 border-electrifying-orangered">
+                            Languages
+                        </h2>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>IGBO (Native)</li>
+                            <li>SPANISH (Basic)</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h2 class="text-lg font-bold uppercase tracking-widest text-electrifying-orangered pb-1 border-b-2 border-electrifying-orangered">
+                            Hobbies
+                        </h2>
+                        <ul class="list-disc pl-5 text-sm space-y-1">
+                            <li>Coding</li>
+                            <li>Playing Music (Piano, Organ, Guitar)</li>
+                            <li>Studying & Continuous Learning</li>
+                            <li>Reading</li>
+                            <li>Hairstyling (Barber)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-2 p-6 md:p-8 space-y-10">
+
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-primary-dark border-b-4 border-electrifying-orangered pb-2">
+                        Professional Summary
+                    </h2>
+                    <p class="text-gray-700 leading-relaxed italic">
+                        As a passionate Senior Developer with extensive experience in crafting innovative solutions, I am eager to bring my expertise in software development and team collaboration to your esteemed organization. My commitment to excellence and continuous learning drives me to contribute effectively to your projects, ensuring high-quality results. I am excited about the opportunity to join your team and help shape the future of technology together.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-primary-dark border-b-4 border-electrifying-orangered pb-2">
+                        Experience
+                    </h2>
+                    <div class="relative pl-6 border-l-4 border-electrifying-orangered/50">
+                        <div class="absolute -left-3 top-0 w-6 h-6 bg-electrifying-orangered rounded-full shadow-lg"></div>
+                        <h3 class="text-xl font-semibold text-primary-dark">Senior Developer</h3>
+                        <p class="text-sm font-medium text-gray-600">Circle of Developers - Onitsha, Anambra State, Nigeria.</p>
+                        <p class="text-sm font-light text-gray-500 mb-3">Jun 2022 – Present</p>
+                        <ul class="list-none space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Led a team to deliver **20+ successful software projects** on time.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Increased application performance by **30%** through code optimization.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Implemented agile methodologies, boosting team productivity by **25%**.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Designed scalable architectures, reducing downtime by **40%**.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Mentored junior developers, enhancing team skills and cohesion.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Streamlined deployment processes, cutting release time by **50%**.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-primary-dark border-b-4 border-electrifying-orangered pb-2">
+                        Education
+                    </h2>
+                    <div class="relative pl-6 border-l-4 border-electrifying-orangered/50">
+                        <div class="absolute -left-3 top-0 w-6 h-6 bg-electrifying-orangered rounded-full shadow-lg"></div>
+                        <h3 class="text-xl font-semibold text-primary-dark">National Diploma (Web Development)</h3>
+                        <p class="text-sm font-medium text-gray-600">Don Bosco Institute of Technology, Ibolo Obosi, Anambra State, Nigeria.</p>
+                        <p class="text-sm font-light text-gray-500 mb-3">2024 — 2026 (Expected)</p>
+                        <ul class="list-none space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Expected to achieve National Diploma with **Distinction** in Web Development.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Completed coursework with a high **GPA of 4.0/4.5**.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Received **'Best Project' award** for innovative design and functionality.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-electrifying-orangered text-lg mr-2">•</span>
+                                Participated in national technology competitions, securing a **top 5 position**.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold uppercase tracking-wider text-primary-dark border-b-4 border-electrifying-orangered pb-2">
+                        Key Achievements
+                    </h2>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li>
+                            <p class="font-semibold flex items-center">
+                                <span class="text-xl mr-2 text-electrifying-orangered">🏅</span>
+                                National Merit Scholar — **Top of Class** (2022)
+                            </p>
+                            <p class="text-sm ml-6 text-gray-600">Recognized for exceptional academic performance and leadership.</p>
+                        </li>
+                        <li>
+                            <p class="font-semibold flex items-center">
+                                <span class="text-xl mr-2 text-electrifying-orangered">🥇</span>
+                                Best Web Development Project Award (2023)
+                            </p>
+                            <p class="text-sm ml-6 text-gray-600">Awarded for building an innovative full-stack application with a modern UI/UX and real-time functionality.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="p-6 text-center bg-gray-100 border-t border-gray-200 no-print">
+            
+            <a href="https://portfolio-aseb.vercel.app/" target="_blank" class="inline-block px-8 py-3 mr-4 text-sm font-semibold text-white bg-primary-dark rounded-lg shadow-md hover:bg-gray-700 transition duration-150 download-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                View Online Portfolio
+            </a>
+            
+            <button onclick="window.print()" class="inline-block px-8 py-3 text-sm font-semibold text-white bg-electrifying-orangered rounded-lg shadow-lg hover:bg-red-600 transition duration-150 download-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download CV (PDF)
+            </button>
+        </footer>
+
+
+        <div class="text-center py-3 border-t border-gray-200 bg-gray-50 text-xs text-gray-500">
+            &copy; 2025 Ogaraku Ugochukwu - Full Stack Web Developer
+        </div>
+
+    </div>
+
+    <script>
+        /**
+         * Copies text to the clipboard and shows a temporary success message.
+         * @param {string} textToCopy The text content to be copied.
+         */
+        function copyToClipboard(textToCopy) {
+            // Determine which element to update based on content
+            let targetSpan = null;
+            let feedbackElement = null;
+
+            if (textToCopy.includes('@')) {
+                targetSpan = document.getElementById('email-text');
+                feedbackElement = targetSpan.nextElementSibling;
+            } else if (textToCopy.includes('+234')) {
+                targetSpan = document.getElementById('phone-text'); 
+                feedbackElement = targetSpan.nextElementSibling;
+            }
+
+            // Copy logic
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            // Feedback mechanism
+            if (feedbackElement) {
+                feedbackElement.textContent = 'Copied!';
+                feedbackElement.classList.add('font-bold', 'opacity-100');
+                feedbackElement.classList.remove('opacity-0');
+
+                setTimeout(() => {
+                    feedbackElement.textContent = '(Copy)';
+                    feedbackElement.classList.remove('font-bold', 'opacity-100');
+                    feedbackElement.classList.add('opacity-0');
+                }, 1500);
+            }
+        }
+    </script>
+</body>
+</html>
