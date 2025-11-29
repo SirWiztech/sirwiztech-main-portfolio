@@ -13,7 +13,7 @@ const HeroPic = () => {
     >
       <img
         src="/images/me.png"
-        alt="Abdelrahman Qassem"
+        alt="wiztech"
         className="max-h-[450px] w-auto"
       />
 

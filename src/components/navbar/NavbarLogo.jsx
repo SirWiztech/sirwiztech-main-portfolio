@@ -5,7 +5,7 @@ const NavbarLogo = () => {
     <div>
       <img
         src={fullLogo}
-        alt="Abdelrahman Qassem Logo"
+        alt="wiztech logo"
         // These Tailwind CSS classes make the image responsive.
         // 'h-auto' maintains the aspect ratio.
         // 'w-24' sets a default width (e.g., 96px).

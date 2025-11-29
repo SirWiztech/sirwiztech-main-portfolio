@@ -23,7 +23,7 @@ function App() {
       <AboutMeMain />
       <SkillsMain />
       <SubSkills />
-      <OtherSkillsMain/>
+      <OtherSkillsMain />
       <ExperienceMain />
       <ProjectsMain />
       <ContactMeMain />

@@ -8,12 +8,12 @@ import { SiNextdotjs } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
-<<<<<<< HEAD
+
 import { SiNodedotjs, SiPhp, SiVuedotjs, SiAngular } from "react-icons/si";
 import { FaPython, FaWordpress, FaBootstrap } from "react-icons/fa";
 import { SiWix, SiFramer, SiWebflow, SiDjango, SiFlask } from "react-icons/si";
-=======
->>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
+
+
 
 const skills = [
   {
@@ -48,7 +48,7 @@ const skills = [
     skill: "TailwindCSS",
     icon: RiTailwindCssFill,
   },
-<<<<<<< HEAD
+
   { skill: "Node.js", icon: SiNodedotjs },
   { skill: "PHP", icon: SiPhp },
   { skill: "Vue.js", icon: SiVuedotjs },
@@ -61,8 +61,8 @@ const skills = [
   { skill: "Wix", icon: SiWix },
   { skill: "Framer", icon: SiFramer },
   { skill: "Webflow", icon: SiWebflow },
-=======
->>>>>>> d6f189a3a09658b64d37ef59432d32519b7bcb59
+
+
 ];
 
 const AllSkillsSM = () => {
