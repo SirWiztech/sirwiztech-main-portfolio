@@ -9,7 +9,7 @@ import ProjectsMain from "./components/projectsSection/ProjectsMain";
 import SkillsMain from "./components/skillsSection/SkillsMain";
 import SubSkills from "./components/skillsSection/SubSkills";
 import SubHeroMain from "./components/subHeroSection/SubHeroMain";
-import MainButtonDocument from './components/curriculumvitae/main_button_document';
+import MainButtonDocument from './components/curriculumvitae/MainButtonDocument';
 
 import OtherSkillsMain from "./components/otherskills/otherskillsmain"
 
