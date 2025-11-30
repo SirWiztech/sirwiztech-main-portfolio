@@ -9,7 +9,6 @@ const ContactInfo = () => {
       <SingleInfo text="ogarakuugochukwu9@gmail.com" Image={HiOutlineMail} />
       <SingleInfo text="+234 8108 78 76 25" Image={FiPhone} />
       <SingleInfo text="Anambra, Nigeria" Image={IoLocationOutline} />
-      <SingleInfo text="Abuja, Nigeria" Image={IoLocationOutline} />
     </div>
   );
 };
