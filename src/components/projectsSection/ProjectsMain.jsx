@@ -7,7 +7,7 @@ const projects = [
 
   {
     name: "Dennise Clemmer E-commerce Webapp",
-    year: "Nov2025",
+    year: "Nov2026",
     align: "right",
     image: "/images/dennise-clemmer.png", // <-- Add leading slash
     link: "https://dennise-clemmer.netlify.app/ ",
@@ -15,7 +15,7 @@ const projects = [
 
   {
     name: "Kea-housing-and-property estate",
-    year: "Nov2025",
+    year: "Nov2026",
     align: "left",
     image: "/images/kea-housing-and-property.png", // <-- Add leading slash
     link: "https://kea-housing-and-property.netlify.app// ",
@@ -23,7 +23,7 @@ const projects = [
 
   {
     name: "Allure nails",
-    year: "Nov2025",
+    year: "Nov2026",
     align: "right",
     image: "/images/allure-nails.png", // <-- Add leading slash
     link: "https://allure-premium-services.netlify.app/ ",
@@ -31,7 +31,7 @@ const projects = [
 
   {
     name: "Msheavenly E-commerce Webapp",
-    year: "Nov2025",
+    year: "Nov2026",
     align: "left",
     image: "/images/msheavenly.png", // <-- Add leading slash
     link: "https://msheavenlyco.kesug.com/ ",
