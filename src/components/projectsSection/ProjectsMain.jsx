@@ -6,6 +6,30 @@ import { fadeIn } from "../../framerMotion/variants";
 const projects = [
 
   {
+    name: "Dennise Clemmer E-commerce Webapp",
+    year: "Nov2025",
+    align: "right",
+    image: "/images/dennise-clemmer.png", // <-- Add leading slash
+    link: "https://dennise-clemmer.netlify.app/ ",
+  },
+
+  {
+    name: "Kea-housing-and-property estate",
+    year: "Nov2025",
+    align: "left",
+    image: "/images/kea-housing-and-property.png", // <-- Add leading slash
+    link: "https://kea-housing-and-property.netlify.app// ",
+  },
+
+  {
+    name: "Allure nails",
+    year: "Nov2025",
+    align: "right",
+    image: "/images/allure-nails.png", // <-- Add leading slash
+    link: "https://allure-premium-services.netlify.app/ ",
+  },
+
+  {
     name: "Msheavenly E-commerce Webapp",
     year: "Nov2025",
     align: "left",
