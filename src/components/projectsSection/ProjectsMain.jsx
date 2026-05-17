@@ -4,6 +4,23 @@ import { motion } from "framer-motion";
 import { fadeIn } from "../../framerMotion/variants";
 
 const projects = [
+
+  {
+    name: "Msheavenly E-commerce Webapp",
+    year: "Nov2025",
+    align: "left",
+    image: "/images/msheavenly.png", // <-- Add leading slash
+    link: "https://msheavenlyco.kesug.com/ ",
+  },
+
+  {
+    name: "Allonblack Casino Webapp",
+    year: "Nov2025",
+    align: "right",
+    image: "/images/allonblack.png", // <-- Add leading slash
+    link: "https://allonblack.net/ ",
+  },
+
   {
     name: "Scorezone Webapp",
     year: "Nov2025",
