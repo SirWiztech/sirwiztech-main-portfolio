@@ -17,8 +17,8 @@ const projects = [
     name: "Kea-housing-and-property estate",
     year: "Nov2026",
     align: "left",
-    image: "/images/kea-housing-and-property.png", // <-- Add leading slash
-    link: "https://kea-hosuing-and-property.netlify.app// ",
+    image: "/images/kea-hosuing-and-property.png", // <-- Add leading slash
+    link: "https://kea-housing-and-property.netlify.app// ",
   },
 
   {
