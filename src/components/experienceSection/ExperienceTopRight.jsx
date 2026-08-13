@@ -1,16 +1,16 @@
 const ExperienceTopRight = () => {
   return (
-    <div className="xl:w-[25%] lg:w-[30%] border border-lightBrown p-4 rounded-xl">
-      <p className="text-lg text-center text-lightGrey">
+    <div className="card-portfolio p-8">
+      <p className="text-center text-lg leading-relaxed text-lightGrey">
         I specialize in{" "}
         <span className="font-bold text-white">
-
-          React, next.js, nest.js, nuxt.js, php, dart and modern JavaScript(node.js), i also specialize
-          in content management systems like wordpress, wix, webflow, and
-          frameworks like angular, vue.js, bootstrap, tailwindcss
-
-          React, php, dart and modern JavaScript(node.js)
-
+          Php, JavaScript and Python
+        </span>
+        ,i also specialize in content management systems like{" "}
+        <span className="font-bold text-white">wordpress, wix, webflow</span>,
+        and frameworks like{" "}
+        <span className="font-bold text-white">
+          Laravel, Next js, React, FastApi, vue.js, bootstrap, tailwindcss
         </span>
         , leveraging best practices to create scalable and maintainable
         solutions. <br />

@@ -6,26 +6,29 @@ import { fadeIn } from "../../framerMotion/variants";
 
 const ExperienceMain = () => {
   return (
-    <div id="experience" className="max-w-[1200px] mx-auto px-4">
+    <section id="experience" className="container-portfolio section-pad">
       <motion.div
         variants={fadeIn("down", 0)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ExperienceText />
       </motion.div>
+
       <motion.div
-        variants={fadeIn("down", 0.5)}
+        variants={fadeIn("up", 0.15)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <ExperienceTop />
       </motion.div>
-      <div className="w-full h-1 mt-4 bg-lightBrown lg:block sm:hidden"></div>
-      <AllExperiences />
-    </div>
+
+      <div className="mt-16">
+        <AllExperiences />
+      </div>
+    </section>
   );
 };
 

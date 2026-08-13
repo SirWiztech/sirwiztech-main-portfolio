@@ -1,16 +1,19 @@
-import React from 'react'
+import { FiDownload } from "react-icons/fi";
 
 const DownloadcvButton = () => {
   return (
-    <div className='flex justify-center'>
-        <button className="bg-cyan text-black px-6 py-3 mt-20 rounded-md hover:bg-blue-600 transition duration-300">
-            {/* The fa-solid class calls the correct solid font file */}
-            <a href='https://curriculum-vitaes.netlify.app/' className="flex items-center space-x-2">
-                <i className="fa-solid fa-download"></i>
-                <span>Download CV</span>
-            </a>
-        </button>
+    <div className="flex justify-center">
+      <a
+        href="https://curriculum-vitaes.netlify.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange to-darkOrange px-8 py-3.5 text-lg font-bold text-black transition-all duration-300 hover:-translate-y-0.5 hover:shadow-glowAmber"
+      >
+        <FiDownload />
+        Download CV
+      </a>
     </div>
-  )
-}
-export default DownloadcvButton
+  );
+};
+
+export default DownloadcvButton;

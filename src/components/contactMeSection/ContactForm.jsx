@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa6";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -6,32 +7,17 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
-
   const handleWhatsAppSubmit = (e) => {
     e.preventDefault();
 
-    // Construct the WhatsApp message with form data
-    const whatsappMessage = `Hello, my name is ${name}. My email is ${email}.%0A%0A${message}`;
-    
-    // Replace '2348012345678' with your full international phone number without '+' or '00'
-    const phoneNumber = "2348108787625"; 
-    
-    // Create the WhatsApp URL
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+    const whatsappMessage = `Hello, my name is ${name}. My email is ${email}.\n\n${message}`;
+    const phoneNumber = "2348108787625";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
 
-    // Open the URL in a new window/tab
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
-    // Clear form fields and show success message
     setEmail("");
     setName("");
     setMessage("");
@@ -39,46 +25,50 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
-      <p className="text-cyan">{success}</p>
-      <form onSubmit={handleWhatsAppSubmit} className="flex flex-col gap-4">
-        <input
-          type="text"
-          name="from_name"
-          placeholder="Your Name"
-          required
-          className="h-12 rounded-lg bg-lightBrown px-2"
-          value={name}
-          onChange={handleName}
-        />
-        <input
-          type="email"
-          name="from_email"
-          placeholder="Your Email"
-          required
-          className="h-12 rounded-lg bg-lightBrown px-2"
-          value={email}
-          onChange={handleEmail}
-        />
-        <textarea
-          type="text"
-          name="message"
-          rows="9"
-          cols="50"
-          placeholder="Message"
-          required
-          className="rounded-lg bg-lightBrown p-2"
-          value={message}
-          onChange={handleMessage}
-        />
-        <button
-          type="submit"
-          className="w-full rounded-lg border border-cyan text-white h-12 font-bold text-xl hover:bg-darkCyan bg-cyan transition-all duration-500"
-        >
-          Send via WhatsApp
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleWhatsAppSubmit} className="flex w-full flex-col gap-4">
+      {success && (
+        <p role="status" className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300">
+          {success}
+        </p>
+      )}
+      <input
+        type="text"
+        name="from_name"
+        placeholder="Your Name"
+        required
+        aria-label="Your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="h-12 rounded-xl border border-white/10 bg-surface-2 px-4 text-white placeholder:text-lightGrey transition-colors focus:border-cyan focus:outline-none"
+      />
+      <input
+        type="email"
+        name="from_email"
+        placeholder="Your Email"
+        required
+        aria-label="Your email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="h-12 rounded-xl border border-white/10 bg-surface-2 px-4 text-white placeholder:text-lightGrey transition-colors focus:border-cyan focus:outline-none"
+      />
+      <textarea
+        name="message"
+        rows="6"
+        placeholder="Message"
+        required
+        aria-label="Your message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        className="rounded-xl border border-white/10 bg-surface-2 p-4 text-white placeholder:text-lightGrey transition-colors focus:border-cyan focus:outline-none"
+      />
+      <button
+        type="submit"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan to-darkCyan px-6 py-3.5 text-lg font-bold text-black transition-all duration-300 hover:shadow-glowCyan"
+      >
+        <FaWhatsapp className="text-2xl" />
+        Send via WhatsApp
+      </button>
+    </form>
   );
 };
 

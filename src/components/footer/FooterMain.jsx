@@ -1,52 +1,96 @@
 import { Link } from "react-scroll";
+import { useEffect, useRef } from "react";
+import ContactSocial from "../contactMeSection/ContactSocial";
 
 const FooterMain = () => {
   const footerLinks = [
-    {
-      name: "About Me",
-      section: "about",
-    },
-    {
-      name: "Skills",
-      section: "skills",
-    },
-    {
-      name: "Experience",
-      section: "experience",
-    },
-    {
-      name: "Projects",
-      section: "projects",
-    },
+    { name: "About Me", section: "about" },
+    { name: "Skills", section: "skills" },
+    { name: "Experience", section: "experience" },
+    { name: "Projects", section: "projects" },
   ];
+
+  const year = new Date().getFullYear();
+
+  // Auto-fits the giant wordmark to the full viewport width, no matter
+  // the screen size or text length — prevents any horizontal overflow.
+  const markWrapRef = useRef(null);
+  const markTextRef = useRef(null);
+
+  useEffect(() => {
+    const wrap = markWrapRef.current;
+    const text = markTextRef.current;
+    if (!wrap || !text) return;
+
+    const fit = () => {
+      text.style.transform = "scaleX(1)";
+      const wrapWidth = wrap.clientWidth;
+      const textWidth = text.scrollWidth;
+      if (textWidth > 0) {
+        text.style.transform = `scaleX(${wrapWidth / textWidth})`;
+      }
+    };
+
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
+
   return (
-    <div className="px-4">
-      <div className="w-full h-[1px] bg-lightGrey mt-24"></div>
-      <div className="md:flex justify-between mt-4 max-w-[1200px] mx-auto sm:hidden">
-        <p className="text-3xl text-lightGrey ">Wiztech Ogaraku</p>
-        <ul className="flex gap-4 text-lightGrey text-xl">
-          {footerLinks.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  offset={-120}
-                  to={item.section}
-                  className="hover:text-white transition-all duration-500 cursor-pointer"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            );
-          })}
+    <footer className="relative overflow-hidden border-t border-white/10 bg-black px-4">
+      <div className="container-portfolio relative z-10 flex flex-col items-center gap-6 py-10">
+        <div className="hidden md:block">
+          <ContactSocial />
+        </div>
+        <ul className="flex flex-wrap justify-center gap-6 text-lightGrey">
+          {footerLinks.map((item) => (
+            <li key={item.section}>
+              <Link
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-80}
+                to={item.section}
+                className="cursor-pointer transition-colors hover:text-cyan"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
+        
+        <p className="text-sm text-lightGrey">
+          © {year} Wiztech | All Rights Reserved.
+        </p>
       </div>
-      <p className="max-w-[1200px] mx-auto text-right mt-2 mb-12 text-sm text-lightBrown">
-        © 2025 Wiztech | All Rights Reserved.
-      </p>
-    </div>
+
+      {/* Oversized bleeding wordmark — cropped top/bottom, fades to black,
+          barely visible against the background, edge-to-edge width */}
+      <div
+        ref={markWrapRef}
+        aria-hidden="true"
+        className="relative left-1/2 h-[12vw] max-h-[210px] min-h-[70px] w-screen -translate-x-1/2 select-none overflow-hidden"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 45%, transparent 92%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 45%, transparent 92%)",
+        }}
+      >
+        <span
+          ref={markTextRef}
+          className="font-special absolute left-0 top-[-18%] inline-block origin-left whitespace-nowrap text-[22vw] font-black leading-[0.78] tracking-tighter"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.05) 45%, rgba(255,255,255,0.015) 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
+          WIZTECH OGARAKU
+        </span>
+      </div>
+    </footer>
   );
 };
 

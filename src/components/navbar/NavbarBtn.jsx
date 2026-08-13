@@ -2,17 +2,19 @@ import { Link } from "react-scroll";
 import { LuArrowDownRight } from "react-icons/lu";
 
 const NavbarBtn = () => {
-  return (
-    <button className="px-4 py-2 rounded-full text-xl font-bold font-body text-white border-cyan border flex items-center gap-1 bg-gradient-to-r from-darkCyan to-orange transition-all duration-500 hover:scale-110 hover:border-orange cursor-pointer hover:shadow-cyanShadow">
-      <Link spy={true} smooth={true} duration={500} offset={-120} to="contact">
-        Hire Me
-      </Link>
-      {/* This ensures the icon is always hidden on small screens */}
-      <div className="hidden md:block">
-        <LuArrowDownRight />
-      </div>
-    </button>
-  );
+  return (
+    <Link
+      spy={true}
+      smooth={true}
+      duration={500}
+      offset={-110}
+      to="contact"
+      className="group inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-cyan to-darkCyan px-4 py-2 text-sm font-bold text-black transition-all duration-300 hover:shadow-glowCyan"
+    >
+      Hire Me
+      <LuArrowDownRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+    </Link>
+  );
 };
 
 export default NavbarBtn;

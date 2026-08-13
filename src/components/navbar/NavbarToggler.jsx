@@ -1,19 +1,22 @@
+import { useSelector, useDispatch } from "react-redux";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useDispatch } from "react-redux";
+import { FiX } from "react-icons/fi";
 import { toggleMenu } from "../../state/menuSlice";
 
 const NavbarToggler = () => {
+  const menuOpen = useSelector((state) => state.menu.menuOpen);
   const dispatch = useDispatch();
 
-  const setToggleMenu = () => {
-    dispatch(toggleMenu());
-  };
   return (
     <button
-      className="text-2xl p-3 border border-orange rounded-full"
-      onClick={setToggleMenu}
+      type="button"
+      aria-label={menuOpen ? "Close menu" : "Open menu"}
+      aria-expanded={menuOpen}
+      aria-controls="mobile-menu"
+      onClick={() => dispatch(toggleMenu())}
+      className="rounded-full border border-white/15 p-2.5 text-xl text-white transition-colors hover:border-cyan hover:text-cyan"
     >
-      <GiHamburgerMenu />
+      {menuOpen ? <FiX /> : <GiHamburgerMenu />}
     </button>
   );
 };

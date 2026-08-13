@@ -1,19 +1,23 @@
-import fullLogo from '../../assets/logo3.png';
+import fullLogo from "../../assets/my-logo.png";
 
 const NavbarLogo = () => {
   return (
-    <div>
+    <a
+      href="#home"
+      className="inline-flex shrink-0"
+      aria-label="Wiztech logo — back to top"
+      onClick={(e) => {
+        e.preventDefault();
+        document.getElementById("home")?.scrollIntoView({ behavior: "smooth" });
+      }}
+    >
       <img
         src={fullLogo}
-        alt="wiztech logo"
-        // These Tailwind CSS classes make the image responsive.
-        // 'h-auto' maintains the aspect ratio.
-        // 'w-24' sets a default width (e.g., 96px).
-        // 'md:w-32' increases the width on medium screens and up.
-        className="max-w-full h-auto w-24 md:w-32"
+        alt="Wiztech logo"
+        className="h-10 w-auto md:h-12"
       />
-    </div>
+    </a>
   );
 };
 
-export default NavbarLogo;``
+export default NavbarLogo;

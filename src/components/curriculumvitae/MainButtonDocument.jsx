@@ -1,4 +1,3 @@
-import React from 'react'
 import DownloadcvButton from './DownloadcvButton'
 
 const MainButtonDocument = () => {

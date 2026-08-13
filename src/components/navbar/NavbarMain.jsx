@@ -1,32 +1,49 @@
+import { useSelector, useDispatch } from "react-redux";
+import { toggleMenu } from "../../state/menuSlice";
+import { useScrollSpy } from "../../hooks/useScrollSpy";
 import NavbarLogo from "./NavbarLogo";
 import NavbarLinks from "./NavbarLinks";
 import NavbarBtn from "./NavbarBtn";
 import NavbarToggler from "./NavbarToggler";
-import { useSelector } from "react-redux";
+
+const SECTIONS = ["home", "about", "skills", "experience", "projects", "contact"];
 
 const NavbarMain = () => {
-  const menuOpen = useSelector((state) => state.menu.menuOpen);
-  return (
-    <nav className="max-w-[1300px] mx-auto w-full px-4 fixed left-[50%] -translate-x-[50%] z-20 flex gap-4 mt-2">
-      <div className="flex justify-between w-full max-w-[1200px] mx-auto bg-black items-center py-1 px-3 rounded-full border-orange border-[0.5px]">
-        <NavbarLogo />
-        <div className="hidden lg:block">
-          <NavbarLinks />
-        </div>
-        <div>
-          <NavbarBtn />
-        </div>
-        <div className="lg:hidden">
-          <NavbarToggler />
-        </div>
-      </div>
-      {menuOpen && (
-        <div className="lg:hidden absolute top-[120%] left-[50%] -translate-x-[50%] w-full">
-          <NavbarLinks />
-        </div>
-      )}
-    </nav>
-  );
+  const menuOpen = useSelector((state) => state.menu.menuOpen);
+  const dispatch = useDispatch();
+  const active = useScrollSpy(SECTIONS);
+
+  const closeMenu = () => {
+    if (menuOpen) dispatch(toggleMenu());
+  };
+
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 px-4">
+      <nav
+        aria-label="Main navigation"
+        className="container-portfolio mt-3 flex items-center justify-between gap-4 rounded-full border border-white/10 bg-ink/80 px-4 py-2 shadow-card backdrop-blur-xl sm:px-5"
+      >
+        <NavbarLogo />
+        <div className="hidden lg:block">
+          <NavbarLinks active={active} onNavigate={closeMenu} />
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="hidden md:block">
+            <NavbarBtn />
+          </div>
+          <div className="lg:hidden">
+            <NavbarToggler />
+          </div>
+        </div>
+      </nav>
+
+      {menuOpen && (
+        <div className="container-portfolio mt-2 rounded-2xl border border-white/10 bg-ink/95 p-4 shadow-card backdrop-blur-xl lg:hidden">
+          <NavbarLinks active={active} onNavigate={closeMenu} mobile />
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default NavbarMain;

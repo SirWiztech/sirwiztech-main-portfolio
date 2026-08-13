@@ -1,8 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-darkBrown;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-darkBrown text-white font-body antialiased;
+    background-color: #0a0a0e;
+  }
+
+  ::selection {
+    @apply bg-cyan text-black;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0e;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #24242f;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3a46;
+  }
+
+  :focus-visible {
+    outline: 2px solid #21d4fd;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .container-portfolio {
+    @apply mx-auto w-full max-w-[1200px] px-5;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest2 text-cyan;
+  }
+
+  .section-title {
+    @apply font-special text-4xl font-bold md:text-5xl;
+  }
+
+  .card-portfolio {
+    @apply rounded-2xl border border-border bg-surface shadow-card;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* The hero marquee strip is decorative (aria-hidden) and the site owner
+     explicitly wants it to keep scrolling, so exempt it from the freeze. */
+  .animate-marquee {
+    animation-duration: 80s !important;
+    animation-iteration-count: infinite !important;
+  }
 }
