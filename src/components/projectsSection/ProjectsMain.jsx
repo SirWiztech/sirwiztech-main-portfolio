@@ -109,7 +109,7 @@ const projects = [
   {
     name: "Quizify App",
     year: "Mar2025",
-    align: "right",
+    align: "left",
     image: "/images/quizify.png",
     stack: 'Javascript',
     link: "https://quizzify2025.netlify.app/",
