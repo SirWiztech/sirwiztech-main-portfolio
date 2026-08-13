@@ -8,18 +8,12 @@ import {
 } from "react-icons/fa";
 import {
   SiTypescript,
-  SiRedux,
   SiNextdotjs,
   SiNodedotjs,
   SiPhp,
   SiVuedotjs,
-  SiAngular,
-  SiDjango,
-  SiWix,
   SiFramer,
   SiWebflow,
-  SiFastapi,    // Added missing import
-  SiLaravel,   // Added missing import
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -49,8 +43,6 @@ const skillGroups = [
       { skill: "Node.js", icon: SiNodedotjs },
       { skill: "PHP", icon: SiPhp },
       { skill: "Python", icon: FaPython },
-      { skill: "FastAPI", icon: SiFastapi },    // Now properly imported
-      { skill: "Laravel", icon: SiLaravel },    // Now properly imported
     ],
   },
   {
@@ -58,7 +50,7 @@ const skillGroups = [
     description: "Content platforms & builders",
     skills: [
       { skill: "WordPress", icon: FaWordpress },
-      { skill: "Wix", icon: SiWix },
+      { skill: "Wix", icon: FaBootstrap },
       { skill: "Framer", icon: SiFramer },
       { skill: "Webflow", icon: SiWebflow },
     ],

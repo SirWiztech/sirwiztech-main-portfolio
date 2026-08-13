@@ -4,7 +4,7 @@ import { FiGithub } from "react-icons/fi";
 
 const ContactSocial = () => {
   return (
-    <div className="flex gap-3">
+    <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
       <SingleContactSocial
         link="https://www.linkedin.com/in/ogaraku-ugochukwu-4b2a18373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
         Icon={FaLinkedinIn}
